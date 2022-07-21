@@ -1,0 +1,56 @@
+#divChart
+{
+    display: block;
+    
+}
+
+.table {
+    width: 10%;
+    height: 10%;
+  }
+
+.alert
+{
+    background-color: gainsboro;
+    height: 100px; ;
+}
+
+.search{
+    margin-left: 500px ;
+    margin-top: -11%;
+   
+    
+}
+
+.file_text{
+    margin-left: 10px ;
+    margin-bottom: -7%;
+    margin-top: -1%;
+    
+    
+}
+
+.btn-light{
+    margin-left: 550px ;
+    margin-top: -15%;
+    
+}
+
+.filter{
+    margin-left: 750px ;
+    margin-top: -19%;
+  
+}
+
+.rotate-ccw{
+    margin-left: 800px ;
+    margin-top: -23%;
+   
+}
+
+.btn-light1{
+    margin-left: 850px ;
+    margin-top: -27%;
+    background-color:white ;
+}
+

@@ -27,7 +27,7 @@
               <h5 class="m-b-10">MSP Dashboard</h5>
             </div>
             <ul class="breadcrumb">
-              <li class="breadcrumb-item">Devis</li>
+              <li class="breadcrumb-item">DEVIS</li>
             </ul>
           </div>
         </div>
@@ -37,49 +37,138 @@
 
 
 
+
     <!-- [ Main Content ] start -->
     <div class="row">
-      <!-- visitors  start -->
-      <div class="col-sm-3">
-        <div class="card bg-primary text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">18</h2>
-            <h6 class="text-white">Registered Users</h6>
-            <i class="feather icon-user-plus"></i>
+      <!-- [ basic-table ] start -->
+      <div class="col-xl-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Devis </h5>
+          </div>
+          <div class="card-body table-border-style">
+            <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+              <div class="row">
+                <div class="col-sm-4" style="margin-left: 2%;">
+                  <input class="form-control" (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                </div>
+                <div class="col-sm-4">
+                  <button style="margin-left: 120%;" class="btn btn-outline-primary dropdown-toggle" type="button"
+                    id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                    aria-expanded="true">
+                    (PC). All
+                    Customers
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                    <li><a class="dropdown-item" href="#">(PC). All
+                        Active Customers</a></li>
+                    <li><a class="dropdown-item" href="#">(PC). Archived
+                        Customers</a></li>
+                    <li><a class="dropdown-item" href="#">(PC). My
+                        Customers</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dataTable-container">
+
+                <table id="ExampleMaterialTable" mat-table [dataSource]="dataSource">
+                  <!-- ID Column -->
+                  <ng-container matColumnDef="num">
+                    <th mat-header-cell *matHeaderCellDef> Numéro </th>
+                    <td mat-cell *matCellDef="let row"> {{row.num}} </td>
+                  </ng-container>
+                  <!-- ID Column -->
+                  <ng-container matColumnDef="client">
+                    <th mat-header-cell *matHeaderCellDef> Client </th>
+                    <td mat-cell *matCellDef="let row"> {{row.client}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="dist">
+                    <th mat-header-cell *matHeaderCellDef> Distributeur </th>
+                    <td mat-cell *matCellDef="let row"> {{row.distributeur}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Statut </th>
+                    <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="dateCreation">
+                    <th mat-header-cell *matHeaderCellDef> Date de création </th>
+                    <td mat-cell *matCellDef="let row"> {{row.dateCreation}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="modifier">
+                    <th mat-header-cell *matHeaderCellDef> Modifier </th>
+                    <td mat-cell *matCellDef="let row">
+                      <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                          class="material-icons-two-tone iStyle">edit</i></button>
+                    </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                  <!-- Row shown when there is no matching data. -->
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                  aria-label="Select page of periodic elements">
+                </mat-paginator>
+              </div>
+
+            </div>
+
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="card bg-success text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">14</h2>
-            <h6 class="text-white">Active Users</h6>
-            <i class="feather icon-user-check"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card bg-danger text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">1</h2>
-            <h6 class="text-white">Pending Users</h6>
-            <i class="feather icon-user-minus"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card bg-warning text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">16</h2>
-            <h6 class="text-white">Active Memberships</h6>
-            <i class="feather icon-users"></i>
-          </div>
-        </div>
-      </div>
-      <!-- visitors  end -->
+      <!-- [ basic-table ] end -->
     </div>
     <!-- [ Main Content ] end -->
   </div>
 </div>
 
 <!-- [ Main Content ] end -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Modifier Q-428750</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="num" class="col-sm-6 col-form-label">Numéro</label>
+              <input type="text" class="form-control" value="Q-428750">
+            </div>
+            <div class="col-sm-6">
+              <label for="client" class="col-sm-2 col-form-label">Client</label>
+              <input type="text" class="form-control" value="Software Management Solutions (Sms)">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="dist" class="col-sm-6 col-form-label">Distribiteur</label>
+              <input type="text" class="form-control" value="MIPS Micro Informatique">
+            </div>
+            <div class="col-sm-6">
+              <label for="status" class="col-sm-2 col-form-label">Statut</label>
+              <input type="text" class="form-control" value="Brouillon">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="date" class="col-sm-6 col-form-label">Date de création</label>
+              <input type="text" class="form-control" value="06/07/2022 09:14">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn  btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn  btn-primary" data-bs-dismiss="modal">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>

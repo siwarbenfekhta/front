@@ -23,7 +23,7 @@ const ELEMENT_DATA: Client[] = [
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-  displayedColumns: string[] = ['nom', 'email', 'ville', 'pays'];
+  displayedColumns: string[] = ['nom', 'email', 'ville', 'pays', 'modifier'];
   dataSource!: MatTableDataSource<Client>;
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;

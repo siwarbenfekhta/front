@@ -1,4 +1,3 @@
-
 <!-- [ Pre-loader ] start -->
 <div class="loader-bg">
   <div class="loader-track">
@@ -35,241 +34,366 @@
       </div>
     </div>
     <!-- [ breadcrumb ] end -->
-
-
     <!-- [ Main Content ] start -->
     <div class="row">
-      <mat-tab-group animationDuration="0ms">
-        <mat-tab label="Abonnements basés sur l'utilisation">
+      <!-- [ basic-table ] start -->
+      <div class="col-xl-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Facturation </h5>
+          </div>
+          <div class="row">
+            <mat-tab-group animationDuration="0ms">
+              <mat-tab label="Abonnements basés sur l'utilisation">
 
-          <div class="divCard">
-            <div class="card">
-                <div class="card-header">
-                    <canvas id="myChart"> Nous ne pouvons pas dessiner ce graphique maitenant en raison de l'absence de données</canvas>
+                <div class="col-xl-12 col-md-6">
+                  <div class="card">
+                      <div class="card-header">
+                          <h5>Line  Chart</h5>
+                      </div>
+                      <div class="card-body">
+                          <canvas id="myChart" style="width: 100%; height: 300px"></canvas>
+                      </div>
+                  </div>
+              </div>
+                <div  [style.margin-left]="'2%'"  >
+                  <p> {{ today | date: 'dd-MM-yyyy hh:mm:ss a'}}</p> 
                 </div>
-            </div>
-        </div>
-
-          <div  class="row">
-            <p> {{ today | date:'dd-MM-yyyy hh:mm:ss a'}}</p> 
-         </div>
-
-          <div class="alert alert-dark"    >   
-            <div >
-              <img src="..\assets\images\image0.png" id="input_img" width="70px"  height="70px" [style.margin-bottom]="'-6%'" [style.margin-left]="'-2%'"> 
-            </div>
-            <div  [style.margin-left]="'5%'" >
-              <p [style.margin-bottom]="'0%'">Rapport : Subscriptions with Usages and Reasons</p>
-              <h4 > PAYG Billing Report</h4>
-            </div>
-            <div>
-              <button type="button" class="btn  btn-light" [style.margin-left]="'90%'"  [style.margin-top]="'-12%'" >Exporter</button>
-            </div>
-            <div>
-              <button type="button" class="btn  btn-light" [style.margin-left]="'83%'" [style.margin-top]="'-16%'" >
-              <div id="input_container">
-                <img src="..\assets\images\image3.jpg" id="input_img" width="10px"  height="10px">        
-              </div>
-              </button>
-            </div>
-            <div>  
-            <button type="button" class="btn  btn-light" [style.margin-left]="'76%'" [style.margin-top]="'-20%'" >
-              <div id="input_container">
-                <img src="..\assets\images\image2.png" id="input_img" width="10px"  height="10px">        
-              </div>
-            </button>
-            </div>
-            <div>
-            <button type="button" class="btn  btn-light"[style.margin-left]="'57%'"[style.margin-top]="'-24%'"  >Ajouter un graphique
-            </button>
-            </div>
-            <div>
-            <button type="button" class="btn  btn-light" [style.margin-left]="'50%'" [style.margin-top]="'-28%'" > 
-            
-                <img src="..\assets\images\imagee1.png" id="input_img" width="10px"  height="10px">
-            </button>
-            </div>
-          </div>
-
-          <div class="dataTable-container" >
-            <table class="table dataTable-table" id="pc-dt-simple">
-              <thead>
-                <tr>
-                  <th><a href="#" class="dataTable-sorter">Report Start Date </a></th>
-                  <th><a href="#" class="dataTable-sorter">Nom de l'abonnemer Client :Nom du client</a></th>
-                  <th><a href="#" class="dataTable-sorter">Distributeur par défaut : Nom de compte</a></th>
-                  <th><a href="#" class="dataTable-sorter">Sales Order: Shipment Date </a></th>
-                  <th><a href="#" class="dataTable-sorter">Sales Order: QUANTITÉ </a></th>
-                  <th><a href="#" class="dataTable-sorter">Cumulative Calculation Details      </a></th>
-                  <th><a href="#" class="dataTable-sorter">Pricing Type </a></th>
-                  <th><a href="#" class="dataTable-sorter">STrial Period </a></th>
-                  <th><a href="#" class="dataTable-sorter">OrderNumber </a></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-               
-              </tbody>
-            </table>
-          </div>
-          <div> 
-            <div class="form-check form-switch" [style.margin-left]="'0%'" [style.margin-bottom]="'-2%'"  >
-              <label class="form-check-label" for="flexSwitchCheckDefault">Nombres de lignes </label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            </div>
-            <div class="form-check form-switch" [style.margin-left]="'20%'" [style.margin-bottom]="'-2%'" >
-              <label class="form-check-label" for="flexSwitchCheckChecked">Lignes de détail</label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>
-            <div class="form-check form-switch" [style.margin-left]="'40%'" [style.margin-bottom]="'-2%'" >
-              <label class="form-check-label" for="flexSwitchCheckChecked">Sous-totaux</label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>
-            <div class="form-check form-switch" [style.margin-left]="'60%'"  [style.margin-bottom]="'30%'">
-              <label class="form-check-label" for="flexSwitchCheckChecked">Total général </label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>
-          </div>
-        </mat-tab>
-
-        <mat-tab label="Abonnements annuels">
-
-          <div class="divCard">
-            <div class="card">
-                <div class="card-header">
-                    <canvas id="myChart"> Nous ne pouvons pas dessiner ce graphique maitenant en raison de l'absence de données</canvas>
+                
+                <div class="alert">
+                <div >
+                  <a href="#!" class="pc-head-link" id="headerdrp-collapse"  >
+                    <i data-feather="file-text" class="file_text" ></i>
+                  </a>
                 </div>
-            </div>
-        </div>
 
-          <div  class="row">
-            <p> {{ today | date:'dd-MM-yyyy hh:mm:ss a'}}</p> 
-         </div>
+                <div  [style.margin-left]="'5%'"  [style.margin-top]="'-2%'" >
+                  <p [style.margin-bottom]="'0%'"  [style.margin-top]="'2%'">Rapport : Subscriptions with Usages and Reasons</p>
+                  <h4 > PAYG Billing Report</h4>
+                </div>
+                <div  >
+                  <a href="#!" class="pc-head-link" id="headerdrp-collapse"  >
+                    <i data-feather="search"  class="search"></i>
+                    
+                  </a>
+                </div>
+                <div>
+                <button type="button" class="btn  btn-light"  >Ajouter un graphique
+                </button>
+                </div>
 
-          <div class="alert alert-dark"    >   
-            <div >
-              <img src="..\assets\images\image0.png" id="input_img" width="70px"  height="70px" [style.margin-bottom]="'-6%'" [style.margin-left]="'-2%'"> 
-            </div>
-            <div  [style.margin-left]="'5%'" >
-              <p [style.margin-bottom]="'0%'">Rapport : Subscriptions with Usages and Reasons</p>
-              <h4 > PAYG Billing Report</h4>
-            </div>
-            <div>
-              <button type="button" class="btn  btn-light" [style.margin-left]="'90%'"  [style.margin-top]="'-12%'" >Exporter</button>
-            </div>
-            <div>
-              <button type="button" class="btn  btn-light" [style.margin-left]="'83%'" [style.margin-top]="'-16%'" >
-              <div id="input_container">
-                <img src="..\assets\images\image3.jpg" id="input_img" width="10px"  height="10px">        
+                <div  >
+                  <a href="#!" class="pc-head-link" id="headerdrp-collapse"  >
+                    <i data-feather="filter" class="filter" ></i>
+                  </a>
+                  </div>
+
+                  <div  >
+                    <a href="#!" class="pc-head-link" id="headerdrp-collapse"   >
+                      <i data-feather="rotate-ccw" class="rotate-ccw" ></i>
+                    </a>
+                    </div>
+
+                    <div>
+                      <button type="button" class="btn  btn-light1"  >Exporter</button>
+                    </div>
+                    
+        
+    
+    
               </div>
-              </button>
-            </div>
-            <div>  
-            <button type="button" class="btn  btn-light" [style.margin-left]="'76%'" [style.margin-top]="'-20%'" >
-              <div id="input_container">
-                <img src="..\assets\images\image2.png" id="input_img" width="10px"  height="10px">        
-              </div>
-            </button>
-            </div>
-            <div>
-            <button type="button" class="btn  btn-light"[style.margin-left]="'57%'"[style.margin-top]="'-24%'"  >Ajouter un graphique
-            </button>
-            </div>
-            <div>
-            <button type="button" class="btn  btn-light" [style.margin-left]="'50%'" [style.margin-top]="'-28%'" > 
+    
+
+                <div class="card-body table-border-style">
+                  <div class="table-responsive">
+                    <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+                      <div class="dataTable-container">
+                        <table class="table dataTable-table" id="pc-dt-simple">
+                          <thead>
+                            <tr>
+                              <th><a href="#" class="dataTable-sorter">Report Start<br> Date </a></th>
+                              <th><a href="#" class="dataTable-sorter">Nom de l'abonnemer<br> Client:<br>Nom du client</a></th>
+                              <th><a href="#" class="dataTable-sorter">Distributeur <br>par défaut:<br> Nom de compte</a></th>
+                              <th><a href="#" class="dataTable-sorter">Sales Order:<br> Shipment Date </a></th>
+                              <th><a href="#" class="dataTable-sorter">Sales Order:<br> QUANTITÉ </a></th>
+                              <th><a href="#" class="dataTable-sorter">Cumulative <br>Calculation<br> Details      </a></th>
+                              <th><a href="#" class="dataTable-sorter">Pricing<br> Type </a></th>
+                              <th><a href="#" class="dataTable-sorter">STrial <br>Period </a></th>
+                              <th><a href="#" class="dataTable-sorter">Order <br> Number </a></th>
+                            </tr>
             
-                <img src="..\assets\images\image1.png" id="input_img" width="10px"  height="10px">
-            </button>
-            </div>
-          </div>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                                                            
+                           
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+      
+                  </div>
+                  </div>
 
-          <div class="dataTable-container" >
-            <table class="table dataTable-table" id="pc-dt-simple">
-              <thead>
-                <tr>
-                  <th><a href="#" class="dataTable-sorter">Report Start Date </a></th>
-                  <th><a href="#" class="dataTable-sorter">Nom de l'abonnemer Client :Nom du client</a></th>
-                  <th><a href="#" class="dataTable-sorter">Distributeur par défaut : Nom de compte</a></th>
-                  <th><a href="#" class="dataTable-sorter">Sales Order: Shipment Date </a></th>
-                  <th><a href="#" class="dataTable-sorter">Sales Order: QUANTITÉ </a></th>
-                  <th><a href="#" class="dataTable-sorter">Cumulative Calculation Details      </a></th>
-                  <th><a href="#" class="dataTable-sorter">Pricing Type </a></th>
-                  <th><a href="#" class="dataTable-sorter">STrial Period </a></th>
-                  <th><a href="#" class="dataTable-sorter">OrderNumber </a></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-               
-              </tbody>
-            </table>
-          </div>
-          <div> 
-            <div class="form-check form-switch" [style.margin-left]="'0%'" [style.margin-bottom]="'-2%'"  >
-              <label class="form-check-label" for="flexSwitchCheckDefault">Nombres de lignes </label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            </div>
-            <div class="form-check form-switch" [style.margin-left]="'20%'" [style.margin-bottom]="'-2%'" >
-              <label class="form-check-label" for="flexSwitchCheckChecked">Lignes de détail</label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>
-            <div class="form-check form-switch" [style.margin-left]="'40%'" [style.margin-bottom]="'-2%'" >
-              <label class="form-check-label" for="flexSwitchCheckChecked">Sous-totaux</label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>
-            <div class="form-check form-switch" [style.margin-left]="'60%'"  [style.margin-bottom]="'30%'">
-              <label class="form-check-label" for="flexSwitchCheckChecked">Total général </label>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>
-          </div>
-        </mat-tab>
-      </mat-tab-group>
+                  <div class="form-check form-switch" [style.margin-left]="'2%'" [style.margin-bottom]="'-2%'"  >
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Nombres de lignes </label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  </div>
+                  <div class="form-check form-switch" [style.margin-left]="'20%'" [style.margin-bottom]="'-2%'" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Lignes de détail</label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  </div>
+                  <div class="form-check form-switch" [style.margin-left]="'40%'" [style.margin-bottom]="'-2%'" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Sous-totaux</label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  </div>
+                  <div class="form-check form-switch" [style.margin-left]="'60%'"  [style.margin-bottom]="'30%'">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Total général </label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  </div>
+              
+      
 
+              </mat-tab>
+
+
+              <mat-tab label="Abonnements annuels">
+
+                <div class="col-xl-12 col-md-6">
+                  <div class="card">
+                      <div class="card-header">
+                          <h5>Line  Chart</h5>
+                      </div>
+                      <div class="card-body">
+                          <canvas id="myChart" style="width: 100%; height: 300px"></canvas>
+                      </div>
+                  </div>
+              </div>
+                <div  [style.margin-left]="'2%'"  >
+                  <p> {{ today | date: 'dd-MM-yyyy hh:mm:ss a'}}</p> 
+                </div>
+                <div class="alert">
+                  <div >
+                    <a href="#!" class="pc-head-link" id="headerdrp-collapse"  >
+                      <i data-feather="file-text" class="file_text" ></i>
+                    </a>
+                  </div>
+  
+                    <div  [style.margin-left]="'5%'"  [style.margin-top]="'-2%'" >
+                      <p [style.margin-bottom]="'0%'"  [style.margin-top]="'2%'">Rapport : Subscriptions with Usages and Reasons</p>
+                      <h4 > PAYG Billing Report</h4>
+                    </div>
+                    <div  >
+                      <a href="#!" class="pc-head-link" id="headerdrp-collapse"  >
+                        <i data-feather="search"  class="search"></i>  
+                      </a>
+                    </div>
+                    <div>
+                      <button type="button" class="btn  btn-light"  >Ajouter un graphique
+                      </button>
+                    </div>
+  
+                    <div >
+                    <a href="#!" class="pc-head-link" id="headerdrp-collapse"  >
+                      <i data-feather="filter" class="filter" ></i>
+                    </a>
+                    </div>
+                    <div >
+                      <a href="#!" class="pc-head-link" id="headerdrp-collapse"   >
+                        <i data-feather="rotate-ccw" class="rotate-ccw" ></i>
+                      </a>
+                    </div>
+  
+                     <div>
+                        <button type="button" class="btn  btn-light1"  >Exporter</button>
+                    </div>
+                  </div>
+
+                <div class="card-body table-border-style">
+                  <div class="table-responsive">
+                    <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+                      <div class="dataTable-container">
+                        <table class="table dataTable-table" id="pc-dt-simple">
+                          <thead>
+                            <tr>
+                              <th><a href="#" class="dataTable-sorter">Report Start<br> Date </a></th>
+                              <th><a href="#" class="dataTable-sorter">Nom de l'abonnemer<br> Client:<br>Nom du client</a></th>
+                              <th><a href="#" class="dataTable-sorter">Distributeur <br>par défaut:<br> Nom de compte</a></th>
+                              <th><a href="#" class="dataTable-sorter">Sales Order:<br> Shipment Date </a></th>
+                              <th><a href="#" class="dataTable-sorter">Sales Order:<br> QUANTITÉ </a></th>
+                              <th><a href="#" class="dataTable-sorter">Cumulative<br> Calculation<br> Details      </a></th>
+                              <th><a href="#" class="dataTable-sorter">Pricing<br> Type </a></th>
+                              <th><a href="#" class="dataTable-sorter">STrial <br>Period </a></th>
+                              <th><a href="#" class="dataTable-sorter">Order <br> Number </a></th>
+                            </tr>
+            
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              <td>9958</td>
+                              <td>Curicó</td>
+                              <td>2005/02/11</td>
+                              <td>Unity Pugh</td>
+                              
+                            </tr>
+                                                            
+                           
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+      
+                  </div>
+                  </div>
+
+                  <div class="form-check form-switch" [style.margin-left]="'2%'" [style.margin-bottom]="'-2%'"  >
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Nombres de lignes </label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  </div>
+                  <div class="form-check form-switch" [style.margin-left]="'20%'" [style.margin-bottom]="'-2%'" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Lignes de détail</label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  </div>
+                  <div class="form-check form-switch" [style.margin-left]="'40%'" [style.margin-bottom]="'-2%'" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Sous-totaux</label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  </div>
+                  <div class="form-check form-switch" [style.margin-left]="'60%'"  [style.margin-bottom]="'30%'">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Total général </label>
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  </div>
+                  
+      
+
+              </mat-tab>
+            </mat-tab-group>  
+      
+      
+
+
+
+
+
+          
+          </div>
+        </div>
+      </div>
+      <!-- [ basic-table ] end -->
     </div>
     <!-- [ Main Content ] end -->
-  </div>
+</div>   
 </div>
 
 <!-- [ Main Content ] end -->

@@ -19,7 +19,7 @@ const ELEMENT_DATA: Sub[] = [
   styleUrls: ['./subscriptions.component.css']
 })
 export class SubscriptionsComponent implements OnInit {
-  displayedColumns: string[] = ['nom', 'product', 'qte', 'status' , 'client'];
+  displayedColumns: string[] = ['nom', 'product', 'qte', 'status' , 'client', 'modifier'];
   dataSource!: MatTableDataSource<Sub>;
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
