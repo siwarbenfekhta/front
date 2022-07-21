@@ -1,0 +1,239 @@
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+<!-- [ Mobile header ] start -->
+<app-mobile></app-mobile>
+<!-- [ Mobile header ] End -->
+
+<!-- [ navigation menu ] start -->
+<app-sidebar></app-sidebar>
+<!-- [ navigation menu ] end -->
+<!-- [ Header ] start -->
+<app-navbar></app-navbar>
+<!-- [ Header ] end -->
+<!-- [ Main Content ] start -->
+<div class="pc-container">
+  <div class="pcoded-content">
+    <!-- [ breadcrumb ] start -->
+    <div class="page-header">
+      <div class="page-block">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h5 class="m-b-10">MSP Dashboard</h5>
+            </div>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">Revendeurs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- [ basic-table ] start -->
+      <div class="col-xl-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Revendeurs </h5>
+          </div>
+          <div class="card-body table-border-style">
+            <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+
+              <!-- [ breadcrumb ] end -->
+              <div class="row">
+                <mat-tab-group animationDuration="0ms">
+                  <mat-tab label="Abonnement et licences MSP">
+                    <div>
+                      <button style="border: none; height: 35px;margin-left: 0%;"
+                        class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuClickableInside"
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="true">
+                        (PC). All Approved Resellers
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <li><a class="dropdown-item" href="#">(PC). All Approved Resellers</a></li>
+                        <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
+                        <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
+                      </ul>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Search</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                      </mat-form-field>
+                    </div>
+
+                    <div class="dataTable-container">
+
+                      <table id="ExampleMaterialTable" mat-table [dataSource]="dataSource">
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="numero">
+                          <th mat-header-cell *matHeaderCellDef> Numéro </th>
+                          <td mat-cell *matCellDef="let row"> {{row.numero}} </td>
+                        </ng-container>
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="Revendeur">
+                          <th mat-header-cell *matHeaderCellDef> Revendeur </th>
+                          <td mat-cell *matCellDef="let row"> {{row.revendeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="Demandeur">
+                          <th mat-header-cell *matHeaderCellDef> Demandeur </th>
+                          <td mat-cell *matCellDef="let row"> {{row.demandeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="dateCreation">
+                          <th mat-header-cell *matHeaderCellDef> Date de création </th>
+                          <td mat-cell *matCellDef="let row"> {{row.dateCreation}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="modifier">
+                          <th mat-header-cell *matHeaderCellDef> Modifier </th>
+                          <td mat-cell *matCellDef="let row">
+                            <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                class="material-icons-two-tone iStyle">edit</i></button>
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        <!-- Row shown when there is no matching data. -->
+                        <tr class="mat-row" *matNoDataRow>
+                          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                        </tr>
+                      </table>
+                      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                        aria-label="Select page of periodic elements">
+                      </mat-paginator>
+                    </div>
+                  </mat-tab>
+                  <mat-tab label="Licences standard">
+                    <div>
+                      <button style="border: none; height: 35px;margin-left: 0%;"
+                        class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuClickableInside"
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="true">
+                        (PC). All Approved Resellers
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <li><a class="dropdown-item" href="#">(PC). All Approved Resellers</a></li>
+                        <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
+                        <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
+                      </ul>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Search</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                      </mat-form-field>
+                    </div>
+
+                    <div class="dataTable-container">
+
+                      <table id="ExampleMaterialTable" mat-table [dataSource]="dataSource">
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="numero">
+                          <th mat-header-cell *matHeaderCellDef> Automatisation ID </th>
+                          <td mat-cell *matCellDef="let row"> {{row.numero}} </td>
+                        </ng-container>
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="Revendeur">
+                          <th mat-header-cell *matHeaderCellDef> Revendeur </th>
+                          <td mat-cell *matCellDef="let row"> {{row.revendeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="Demandeur">
+                          <th mat-header-cell *matHeaderCellDef> Crée par </th>
+                          <td mat-cell *matCellDef="let row"> {{row.demandeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="dateCreation">
+                          <th mat-header-cell *matHeaderCellDef> Statut </th>
+                          <td mat-cell *matCellDef="let row"> {{row.dateCreation}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="modifier">
+                          <th mat-header-cell *matHeaderCellDef> </th>
+                          <td mat-cell *matCellDef="let row">
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        <!-- Row shown when there is no matching data. -->
+                        <tr class="mat-row" *matNoDataRow>
+                          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                        </tr>
+                      </table>
+                      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                        aria-label="Select page of periodic elements">
+                      </mat-paginator>
+                    </div>
+                  </mat-tab>
+                </mat-tab-group>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ Main Content ] end -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Modifier PRTNR202111-10569</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="numero" class="col-sm-2 col-form-label">Numéro</label>
+              <input type="text" class="form-control" placeholder="PRTNR202111-10569">
+            </div>
+            <div class="col-sm-6">
+              <label for="revendeur" class="col-sm-2 col-form-label">Revendeur</label>
+              <input type="text" class="form-control" placeholder="INFORSAL">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="distribiteur" class="col-sm-2 col-form-label">Distributeur</label>
+              <input type="text" class="form-control" placeholder="MIPS Micro Informatique, Progiciels et Services">
+            </div>
+            <div class="col-sm-6">
+              <label for="statut" class="col-sm-2 col-form-label">Statut</label>
+              <input type="text" class="form-control" placeholder="Awaiting Approval
+            ">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="demandeur" class="col-sm-2 col-form-label">Demandeur</label>
+              <input type="text" class="form-control" placeholder="Elias Teixeira">
+            </div>
+            <div class="col-sm-6">
+              <label for="approver" class="col-sm-2 col-form-label">Approver</label>
+              <input type="text" class="form-control" placeholder="Approver">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="commentaire" class="col-sm-2 col-form-label">Commentaire</label>
+              <input type="text" class="form-control" placeholder="Commentaire">
+            </div>
+            <div class="col-sm-6">
+              <label for="date" class=" col-form-label">Date création</label>
+              <input type="text" class="form-control" placeholder="03/11/2021">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn  btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn  btn-primary" data-bs-dismiss="modal">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
